@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "ファイル共有アプリ",
+    "description": "安全で高速なファイル共有プラットフォーム"
+  },
+  "header": {
+    "title": "File Share App",
+    "subtitle": "安全で高速なファイル共有プラットフォーム。Next.js 14とCloudflareで構築されたモダンなWebアプリケーションです。"
+  },
+  "features": {
+    "fileSharing": {
+      "title": "ファイル共有",
+      "description": "簡単で安全なファイルアップロードと共有機能",
+      "badge": "セキュア"
+    },
+    "fastDelivery": {
+      "title": "高速配信",
+      "description": "Cloudflareのエッジネットワークによる高速配信",
+      "badge": "高速"
+    },
+    "global": {
+      "title": "グローバル",
+      "description": "世界中どこからでもアクセス可能",
+      "badge": "グローバル"
+    }
+  },
+  "actions": {
+    "deploy": "デプロイする",
+    "readDocs": "ドキュメントを読む"
+  },
+  "developer": {
+    "title": "開発者向け情報",
+    "techStack": "このプロジェクトは以下の技術スタックで構築されています：",
+    "getStarted": "開発を始めるには：",
+    "editFile": "を編集してください",
+    "autoReload": "変更を保存すると即座に反映されます"
+  },
+  "footer": {
+    "learn": "学習する",
+    "templates": "テンプレート",
+    "nextjs": "Next.js →"
+  },
+  "language": {
+    "switch": "言語を切り替える",
+    "japanese": "日本語",
+    "english": "English"
+  }
+}

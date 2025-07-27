@@ -1,0 +1,48 @@
+{
+  "metadata": {
+    "title": "File Share App",
+    "description": "Secure and fast file sharing platform"
+  },
+  "header": {
+    "title": "File Share App",
+    "subtitle": "A secure and fast file sharing platform. A modern web application built with Next.js 14 and Cloudflare."
+  },
+  "features": {
+    "fileSharing": {
+      "title": "File Sharing",
+      "description": "Easy and secure file upload and sharing functionality",
+      "badge": "Secure"
+    },
+    "fastDelivery": {
+      "title": "Fast Delivery",
+      "description": "High-speed delivery through Cloudflare's edge network",
+      "badge": "Fast"
+    },
+    "global": {
+      "title": "Global",
+      "description": "Accessible from anywhere in the world",
+      "badge": "Global"
+    }
+  },
+  "actions": {
+    "deploy": "Deploy",
+    "readDocs": "Read Documentation"
+  },
+  "developer": {
+    "title": "Developer Information",
+    "techStack": "This project is built with the following tech stack:",
+    "getStarted": "To get started with development:",
+    "editFile": "Edit the file",
+    "autoReload": "Changes will be reflected immediately upon saving"
+  },
+  "footer": {
+    "learn": "Learn",
+    "templates": "Templates",
+    "nextjs": "Next.js →"
+  },
+  "language": {
+    "switch": "Switch Language",
+    "japanese": "日本語",
+    "english": "English"
+  }
+}
