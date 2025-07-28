@@ -4,11 +4,8 @@ import {  useLocale } from 'next-intl';
 import { usePathname, useRouter } from 'next/navigation';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Globe } from 'lucide-react';
+import { supportedLocales } from '@/lib/constants';
 
-const locales = [
-  { value: 'ja', label: '日本語', flag: '🇯🇵' },
-  { value: 'en', label: 'English', flag: '🇺🇸' }
-];
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -22,7 +19,7 @@ export default function LanguageSwitcher() {
     router.push(newPath);
   };
 
-  const currentLocale = locales.find(l => l.value === locale);
+  const currentLocale = supportedLocales.find(l => l.value === locale);
 
   return (
     <div className="flex items-center gap-2">
@@ -37,7 +34,7 @@ export default function LanguageSwitcher() {
           </SelectValue>
         </SelectTrigger>
         <SelectContent>
-          {locales.map((localeOption) => (
+          {supportedLocales.map((localeOption) => (
             <SelectItem key={localeOption.value} value={localeOption.value}>
               <div className="flex items-center gap-2">
                 <span>{localeOption.flag}</span>

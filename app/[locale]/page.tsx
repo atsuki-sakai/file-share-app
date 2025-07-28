@@ -5,14 +5,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import ThemeToggle from "@/components/theme-toggle";
 import { FileText, Globe, ExternalLink, Code, Zap } from "lucide-react";
+import { Dropzone } from "@/components/dropzone";
 
 export default function Home() {
   const t = useTranslations();
+
   return (
     <div className="min-h-screen bg-background text-foreground">
-      {/* テーマ切り替えボタン */}
-      <ThemeToggle />
-      
       {/* メインコンテンツ */}
       <div className="container mx-auto px-4 py-8">
         {/* ヘッダー */}
@@ -94,8 +93,18 @@ export default function Home() {
             {t('actions.readDocs')}
           </Button>
         </div>
+        <Card className="max-w-2xl mx-auto mt-12">
+          <CardHeader>
+            <CardTitle>
+              ファイルをアップロード
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <Dropzone />
+          </CardContent>
+        </Card>
 
-        {/* 開発者向け情報 */}
+        {/* 開発者向け情報
         <Card className="max-w-2xl mx-auto">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
@@ -133,8 +142,10 @@ export default function Home() {
               </ol>
             </div>
           </CardContent>
-        </Card>
+        </Card> */}
+        
       </div>
+
 
       {/* フッター */}
       <footer className="border-t bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

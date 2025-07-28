@@ -3,6 +3,8 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations } from 'next-intl/server';
 import LanguageSwitcher from '@/components/language-switcher';
+import { Toaster } from "@/components/ui/toaster";
+import ThemeToggle from "@/components/theme-toggle";
 import "../globals.css";
 
 const inter = Inter({
@@ -40,10 +42,14 @@ export default async function RootLayout({
           <NextIntlClientProvider messages={messages}>
             <div className="relative">
               <div className="fixed top-4 right-4 z-50 flex gap-2">
-                <LanguageSwitcher />
+                <div className="flex items-center gap-2">
+                  <LanguageSwitcher />
+                  <ThemeToggle />
+                </div>
               </div>
               {children}
             </div>
+            <Toaster />
           </NextIntlClientProvider>
       </body>
     </html>

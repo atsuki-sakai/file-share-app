@@ -40,7 +40,6 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       variant="outline"
       size="icon"
-      className="fixed top-4 right-4 z-50"
       aria-label={isDark ? 'ライトモードに切り替え' : 'ダークモードに切り替え'}
     >
       {isDark ? (
