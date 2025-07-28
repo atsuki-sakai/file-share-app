@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "title": "App de Partage de Fichiers",
+    "description": "Plateforme de partage de fichiers sécurisée et rapide"
+  },
+  "header": {
+    "title": "App de Partage de Fichiers",
+    "subtitle": "Une plateforme de partage de fichiers sécurisée et rapide. Une application web moderne construite avec Next.js 14 et Cloudflare."
+  },
+  "features": {
+    "fileSharing": {
+      "title": "Partage de Fichiers",
+      "description": "Fonctionnalité de téléchargement et partage de fichiers facile et sécurisée",
+      "badge": "Sécurisé"
+    },
+    "fastDelivery": {
+      "title": "Livraison Rapide",
+      "description": "Livraison haute vitesse via le réseau périphérique de Cloudflare",
+      "badge": "Rapide"
+    },
+    "global": {
+      "title": "Global",
+      "description": "Accessible depuis n'importe où dans le monde",
+      "badge": "Global"
+    }
+  },
+  "actions": {
+    "deploy": "Déployer",
+    "readDocs": "Lire la Documentation"
+  },
+  "developer": {
+    "title": "Informations Développeur",
+    "techStack": "Ce projet est construit avec la pile technologique suivante :",
+    "getStarted": "Pour commencer le développement :",
+    "editFile": "Modifier le fichier",
+    "autoReload": "Les modifications seront reflétées immédiatement après sauvegarde"
+  },
+  "footer": {
+    "learn": "Apprendre",
+    "templates": "Modèles",
+    "nextjs": "Next.js →"
+  },
+  "language": {
+    "switch": "Changer de Langue",
+    "japanese": "日本語",
+    "english": "English"
+  },
+  "dropzone": {
+    "errors": {
+      "filesRejected": "Certains fichiers ont été rejetés",
+      "filesRejectedDescription": "{count} fichiers n'ont pas pu être téléchargés.",
+      "uploadError": "Erreur de Téléchargement",
+      "uploadErrorDescription": "Échec du téléchargement des fichiers."
+    },
+    "success": {
+      "filesSelected": "Fichiers sélectionnés",
+      "filesSelectedDescription": "{count} fichiers ont été sélectionnés.",
+      "uploadComplete": "Téléchargement Terminé",
+      "uploadCompleteDescription": "{count} fichiers ont été téléchargés avec succès.",
+      "filesUploaded": "{count} fichiers téléchargés",
+      "linkCopied": "Lien Copié",
+      "linkCopiedDescription": "Le lien de partage a été copié dans le presse-papiers."
+    },
+    "ui": {
+      "downloadExpiry": "Expiration du Téléchargement",
+      "selectExpiry": "Sélectionner l'expiration",
+      "dropHere": "Déposez les fichiers ici...",
+      "dragDropOrClick": "Glissez-déposez les fichiers ici, ou cliquez pour sélectionner",
+      "selectedFiles": "Fichiers Sélectionnés ({count})",
+      "removeAll": "Tout Supprimer",
+      "uploading": "Téléchargement en cours...",
+      "uploadFiles": "Télécharger {count} fichiers",
+      "downloadZip": "Télécharger en ZIP",
+      "expiry": "Expiration",
+      "none": "Aucune",
+      "days": " jours"
+    }
+  }
+}

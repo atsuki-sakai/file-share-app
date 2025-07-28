@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "title": "파일 공유 앱",
+    "description": "안전하고 빠른 파일 공유 플랫폼"
+  },
+  "header": {
+    "title": "파일 공유 앱",
+    "subtitle": "안전하고 빠른 파일 공유 플랫폼입니다. Next.js 14와 Cloudflare로 구축된 현대적인 웹 애플리케이션입니다."
+  },
+  "features": {
+    "fileSharing": {
+      "title": "파일 공유",
+      "description": "간편하고 안전한 파일 업로드 및 공유 기능",
+      "badge": "보안"
+    },
+    "fastDelivery": {
+      "title": "빠른 전송",
+      "description": "Cloudflare 엣지 네트워크를 통한 고속 전송",
+      "badge": "빠름"
+    },
+    "global": {
+      "title": "글로벌 접근",
+      "description": "전 세계 어디서나 접근 가능",
+      "badge": "글로벌"
+    }
+  },
+  "actions": {
+    "deploy": "배포",
+    "readDocs": "문서 읽기"
+  },
+  "developer": {
+    "title": "개발자 정보",
+    "techStack": "이 프로젝트는 다음 기술 스택으로 구축되었습니다:",
+    "getStarted": "개발 시작하기:",
+    "editFile": "파일 편집",
+    "autoReload": "저장 후 변경사항이 즉시 반영됩니다"
+  },
+  "footer": {
+    "learn": "학습",
+    "templates": "템플릿",
+    "nextjs": "Next.js →"
+  },
+  "language": {
+    "switch": "언어 변경",
+    "japanese": "日本語",
+    "english": "English"
+  },
+  "dropzone": {
+    "errors": {
+      "filesRejected": "일부 파일이 거부되었습니다",
+      "filesRejectedDescription": "{count}개의 파일을 업로드할 수 없습니다.",
+      "uploadError": "업로드 오류",
+      "uploadErrorDescription": "파일 업로드에 실패했습니다."
+    },
+    "success": {
+      "filesSelected": "파일이 선택되었습니다",
+      "filesSelectedDescription": "{count}개의 파일이 선택되었습니다.",
+      "uploadComplete": "업로드 완료",
+      "uploadCompleteDescription": "{count}개의 파일이 성공적으로 업로드되었습니다.",
+      "filesUploaded": "{count}개의 파일이 업로드됨",
+      "linkCopied": "링크가 복사되었습니다",
+      "linkCopiedDescription": "공유 링크가 클립보드에 복사되었습니다."
+    },
+    "ui": {
+      "downloadExpiry": "다운로드 만료",
+      "selectExpiry": "만료일 선택",
+      "dropHere": "여기에 파일을 드롭하세요...",
+      "dragDropOrClick": "파일을 여기에 드래그하거나 클릭하여 선택하세요",
+      "selectedFiles": "선택된 파일 ({count})",
+      "removeAll": "모두 제거",
+      "uploading": "업로드 중...",
+      "uploadFiles": "{count}개 파일 업로드",
+      "downloadZip": "ZIP 다운로드",
+      "expiry": "만료일",
+      "none": "없음",
+      "days": "일"
+    }
+  }
+}

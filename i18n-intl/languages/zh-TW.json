@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "title": "檔案分享應用",
+    "description": "安全快速的檔案分享平台"
+  },
+  "header": {
+    "title": "檔案分享應用",
+    "subtitle": "安全快速的檔案分享平台。使用 Next.js 14 和 Cloudflare 構建的現代 Web 應用程式。"
+  },
+  "features": {
+    "fileSharing": {
+      "title": "檔案分享",
+      "description": "簡單安全的檔案上傳和分享功能",
+      "badge": "安全"
+    },
+    "fastDelivery": {
+      "title": "快速傳輸",
+      "description": "透過 Cloudflare 邊緣網路實現高速傳輸",
+      "badge": "快速"
+    },
+    "global": {
+      "title": "全球存取",
+      "description": "全球任何地方都可存取",
+      "badge": "全球"
+    }
+  },
+  "actions": {
+    "deploy": "部署",
+    "readDocs": "閱讀文件"
+  },
+  "developer": {
+    "title": "開發者資訊",
+    "techStack": "此專案使用以下技術堆疊構建：",
+    "getStarted": "開始開發：",
+    "editFile": "編輯檔案",
+    "autoReload": "儲存後變更將立即生效"
+  },
+  "footer": {
+    "learn": "學習",
+    "templates": "範本",
+    "nextjs": "Next.js →"
+  },
+  "language": {
+    "switch": "切換語言",
+    "japanese": "日本語",
+    "english": "English"
+  },
+  "dropzone": {
+    "errors": {
+      "filesRejected": "部分檔案被拒絕",
+      "filesRejectedDescription": "{count}個檔案無法上傳。",
+      "uploadError": "上傳錯誤",
+      "uploadErrorDescription": "檔案上傳失敗。"
+    },
+    "success": {
+      "filesSelected": "檔案已選擇",
+      "filesSelectedDescription": "已選擇{count}個檔案。",
+      "uploadComplete": "上傳完成",
+      "uploadCompleteDescription": "{count}個檔案已成功上傳。",
+      "filesUploaded": "已上傳{count}個檔案",
+      "linkCopied": "連結已複製",
+      "linkCopiedDescription": "分享連結已複製到剪貼簿。"
+    },
+    "ui": {
+      "downloadExpiry": "下載期限",
+      "selectExpiry": "選擇有效期",
+      "dropHere": "將檔案拖放到此處...",
+      "dragDropOrClick": "拖放檔案到此處，或點擊選擇",
+      "selectedFiles": "已選擇的檔案 ({count})",
+      "removeAll": "全部刪除",
+      "uploading": "上傳中...",
+      "uploadFiles": "上傳{count}個檔案",
+      "downloadZip": "下載ZIP",
+      "expiry": "有效期",
+      "none": "無",
+      "days": "天"
+    }
+  }
+}

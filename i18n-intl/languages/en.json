@@ -44,5 +44,36 @@
     "switch": "Switch Language",
     "japanese": "日本語",
     "english": "English"
+  },
+  "dropzone": {
+    "errors": {
+      "filesRejected": "Some files were rejected",
+      "filesRejectedDescription": "{count} files could not be uploaded.",
+      "uploadError": "Upload Error",
+      "uploadErrorDescription": "Failed to upload files."
+    },
+    "success": {
+      "filesSelected": "Files selected",
+      "filesSelectedDescription": "{count} files have been selected.",
+      "uploadComplete": "Upload Complete",
+      "uploadCompleteDescription": "{count} files have been uploaded successfully.",
+      "filesUploaded": "{count} files uploaded",
+      "linkCopied": "Link Copied",
+      "linkCopiedDescription": "Share link has been copied to clipboard."
+    },
+    "ui": {
+      "downloadExpiry": "Download Expiry",
+      "selectExpiry": "Select expiry",
+      "dropHere": "Drop files here...",
+      "dragDropOrClick": "Drag & drop files here, or click to select",
+      "selectedFiles": "Selected Files ({count})",
+      "removeAll": "Remove All",
+      "uploading": "Uploading...",
+      "uploadFiles": "Upload {count} files",
+      "downloadZip": "Download as ZIP",
+      "expiry": "Expiry",
+      "none": "None",
+      "days": " days"
+    }
   }
 }

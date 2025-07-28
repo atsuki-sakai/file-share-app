@@ -44,5 +44,36 @@
     "switch": "言語を切り替える",
     "japanese": "日本語",
     "english": "English"
+  },
+  "dropzone": {
+    "errors": {
+      "filesRejected": "一部のファイルが拒否されました",
+      "filesRejectedDescription": "{count}個のファイルがアップロードできませんでした。",
+      "uploadError": "アップロードエラー",
+      "uploadErrorDescription": "ファイルのアップロードに失敗しました。"
+    },
+    "success": {
+      "filesSelected": "ファイルが選択されました",
+      "filesSelectedDescription": "{count}個のファイルが選択されました。",
+      "uploadComplete": "アップロード完了",
+      "uploadCompleteDescription": "{count}個のファイルが正常にアップロードされました。",
+      "filesUploaded": "{count}個のファイルがアップロードされました",
+      "linkCopied": "リンクをコピーしました",
+      "linkCopiedDescription": "共有リンクがクリップボードにコピーされました。"
+    },
+    "ui": {
+      "downloadExpiry": "ダウンロード期限",
+      "selectExpiry": "有効期限を選択",
+      "dropHere": "ここにファイルをドロップしてください...",
+      "dragDropOrClick": "ファイルをドラッグ&ドロップするか、クリックして選択してください",
+      "selectedFiles": "選択されたファイル ({count})",
+      "removeAll": "すべて削除",
+      "uploading": "アップロード中...",
+      "uploadFiles": "{count}個のファイルをアップロード",
+      "downloadZip": "ZIPでダウンロード",
+      "expiry": "有効期限",
+      "none": "無し",
+      "days": "日"
+    }
   }
 }
