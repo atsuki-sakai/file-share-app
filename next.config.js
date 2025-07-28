@@ -9,6 +9,7 @@ module.exports = withNextIntl((async () => {
     const  {initOpenNextCloudflareForDev} = await import('@opennextjs/cloudflare');
     initOpenNextCloudflareForDev();
     return {
+      output: 'standalone',
       images: {
         domains: ['images.unsplash.com'],
       },
@@ -16,6 +17,7 @@ module.exports = withNextIntl((async () => {
   } catch (error) {
     console.error(error);
     return {
+      output: 'standalone',
       images: {
         domains: ['images.unsplash.com'],
       },
