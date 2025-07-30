@@ -29,8 +29,26 @@
 		{
 			"binding": "R2",
 			"bucket_name": "file-share-app"
+		},
+		{
+			"binding": "AUTO_RAG_R2",
+			"bucket_name": "auto-rag"
 		}
-	]
+	],
+	"ai": {
+		"binding": "AI"
+	},
+	"kv_namespaces": [
+		{
+		"binding": "WEATHER_KV",
+		"id": "1a82265b5c2e430cb7e92a730b435889"
+		}
+	],
+	"vars": {
+		"NEXTJS_ENV": "development",
+		"WEATHER_API_KEY": "2e8077a231c7f6f22b0505c917bd6a31"
+	}
+	  
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

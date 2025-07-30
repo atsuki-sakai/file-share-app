@@ -1,8 +1,7 @@
 import { sqliteTable, text, integer } from "drizzle-orm/sqlite-core";
-import { randomUUID } from "crypto";
 
 export const files = sqliteTable("files", {
-    id: text("id").primaryKey().$defaultFn(() => randomUUID()),
+    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     name: text("name").notNull(),
     path: text("path").notNull(),
     size: integer("size").notNull(),

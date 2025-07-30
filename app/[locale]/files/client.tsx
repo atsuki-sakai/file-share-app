@@ -26,7 +26,8 @@ export default function MultipleFileDownloadClient({ fileIds, filesInfo }: Multi
                 title: "ダウンロード開始",
                 description: "ZIPファイルのダウンロードを開始しました。",
             })
-        } catch (error) {
+        } catch (err) {
+            console.error("ZIPファイルのダウンロードに失敗しました。", err)
             toast({
                 title: "ダウンロードエラー",
                 description: "ZIPファイルのダウンロードに失敗しました。",
@@ -45,7 +46,8 @@ export default function MultipleFileDownloadClient({ fileIds, filesInfo }: Multi
                 title: "ダウンロード開始",
                 description: `${fileName} のダウンロードを開始しました。`,
             })
-        } catch (error) {
+        } catch (err) {
+            console.error("ファイルのダウンロードに失敗しました。", err)
             toast({
                 title: "ダウンロードエラー",
                 description: `${fileName} のダウンロードに失敗しました。`,
@@ -124,7 +126,7 @@ export default function MultipleFileDownloadClient({ fileIds, filesInfo }: Multi
                         </CardHeader>
                         <CardContent>
                             <div className="space-y-3">
-                                {filesInfo.map((file, index) => (
+                                {filesInfo.map((file) => (
                                     <div key={file.id} className="flex items-center justify-between p-3 bg-muted rounded-lg">
                                         <div className="flex items-center space-x-3 min-w-0 flex-1">
                                             <File className="h-5 w-5 text-muted-foreground flex-shrink-0" />

@@ -1,32 +1,36 @@
 {
   "metadata": {
-    "title": "App de Partage de Fichiers",
-    "description": "Plateforme de partage de fichiers sécurisée et rapide"
+    "title": "Système de Partage de Fichiers et Gestion Comptable d'Entreprise",
+    "description": "Solution d'affaires avec sécurité, support multilingue et livraison haute vitesse"
   },
   "header": {
-    "title": "App de Partage de Fichiers",
-    "subtitle": "Une plateforme de partage de fichiers sécurisée et rapide. Une application web moderne construite avec Next.js 14 et Cloudflare."
+    "title": "Plateforme Intégrée d'Entreprise",
+    "subtitle": "Découvrez notre démo de solution d'affaires nouvelle génération. Testez la puissance de notre système optimisé pour les dirigeants, du partage sécurisé de fichiers à la gestion comptable."
   },
   "features": {
     "fileSharing": {
-      "title": "Partage de Fichiers",
-      "description": "Fonctionnalité de téléchargement et partage de fichiers facile et sécurisée",
-      "badge": "Sécurisé"
+      "title": "Partage de Fichiers d'Entreprise Sécurisé",
+      "description": "Système de partage de fichiers sécurisé et efficace de niveau entreprise répondant aux normes de sécurité corporatives",
+      "badge": "Entreprise"
     },
     "fastDelivery": {
-      "title": "Livraison Rapide",
-      "description": "Livraison haute vitesse via le réseau périphérique de Cloudflare",
-      "badge": "Rapide"
+      "title": "Livraison Mondiale Haute Vitesse",
+      "description": "Accès mondial haute vitesse alimenté par l'infrastructure de réseau périphérique de Cloudflare",
+      "badge": "Mondial"
     },
     "global": {
-      "title": "Global",
-      "description": "Accessible depuis n'importe où dans le monde",
-      "badge": "Global"
+      "title": "Support Multilingue",
+      "description": "Support des langues principales incluant le japonais et l'anglais pour l'expansion commerciale internationale",
+      "badge": "Multilingue"
     }
   },
+  "upload": {
+    "title": "Expérience de Téléchargement de Fichiers",
+    "description": "Essayez de télécharger des fichiers pour expérimenter directement l'utilisabilité du système"
+  },
   "actions": {
-    "deploy": "Déployer",
-    "readDocs": "Lire la Documentation"
+    "deploy": "Considérer l'Implémentation Complète",
+    "readDocs": "Examiner les Spécifications Techniques"
   },
   "developer": {
     "title": "Informations Développeur",
@@ -74,6 +78,57 @@
       "expiry": "Expiration",
       "none": "Aucune",
       "days": " jours"
+    }
+  },
+  "autorag": {
+    "title": "AutoRAG - Système de Recherche Intelligent",
+    "subtitle": "Essayez notre système de récupération d'informations intelligent alimenté par Cloudflare AutoRAG. L'index est automatiquement mis à jour toutes les 4 heures.",
+    "upload": {
+      "title": "Ajouter du Texte à la Base de Connaissances",
+      "description": "Saisir du texte pour l'ajouter à la base de connaissances AutoRAG. Les données ajoutées sont automatiquement indexées toutes les 4 heures.",
+      "titlePlaceholder": "ex. Qu'est-ce que Cloudflare ?",
+      "textPlaceholder": "ex. Cloudflare est un service cloud qui améliore les performances, la sécurité et la fiabilité des sites web et applications...",
+      "button": "Télécharger la paire Q&R",
+      "uploading": "Téléchargement en cours...",
+      "questionLabel": "Question",
+      "answerLabel": "Réponse"
+    },
+    "search": {
+      "title": "Recherche AutoRAG",
+      "description": "Rechercher des informations dans la base de connaissances et obtenir des réponses",
+      "placeholder": "Entrez votre question...",
+      "empty": "Entrez une question pour commencer la recherche",
+      "searching": "Recherche en cours...",
+      "shortcuts": {
+        "send": "Entrée : Envoyer",
+        "newline": "Maj + Entrée : Nouvelle ligne"
+      }
+    }
+  },
+  "weather": {
+    "title": "Informations Météo - Démo Cache KV Cloudflare",
+    "subtitle": "Testez la fonctionnalité de mise en cache des informations météo. Le premier appel récupère depuis l'API et met en cache dans KV pendant 5 minutes.",
+    "form": {
+      "cityPlaceholder": "Entrez le nom de la ville (ex. Tokyo, London, Paris)",
+      "fetchButton": "Récupérer",
+      "clearCacheButton": "Vider le Cache et Récupérer"
+    },
+    "status": {
+      "cached": "Depuis le Cache",
+      "fresh": "Depuis l'API",
+      "cachedAt": "Mis en cache à",
+      "temperature": "Température",
+      "feelsLike": "Ressenti",
+      "humidity": "Humidité",
+      "windSpeed": "Vitesse du vent"
+    },
+    "info": {
+      "title": "Comment fonctionne le Cache KV :",
+      "points": [
+        "L'appel API initial sauvegarde le résultat dans KV pendant 5 minutes",
+        "Les requêtes suivantes pour la même ville dans les 5 minutes retournent la réponse mise en cache",
+        "Utilisez le bouton 'Vider le Cache' pour forcer la récupération de nouvelles données"
+      ]
     }
   }
 }

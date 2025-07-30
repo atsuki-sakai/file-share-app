@@ -1,32 +1,36 @@
 {
   "metadata": {
-    "title": "ファイル共有アプリ",
-    "description": "安全で高速なファイル共有プラットフォーム"
+    "title": "企業向けファイル共有 & 会計管理システム",
+    "description": "セキュリティと多言語対応、高速配信を実現したビジネスソリューション"
   },
   "header": {
-    "title": "File Share App",
-    "subtitle": "安全で高速なファイル共有プラットフォーム。Next.js 14とCloudflareで構築されたモダンなWebアプリケーションです。"
+    "title": "エンタープライズ統合プラットフォーム",
+    "subtitle": "次世代のビジネスソリューション体験デモ。セキュアなファイル共有から会計管理まで、経営層に最適化されたシステムの実力をご確認ください。"
   },
   "features": {
     "fileSharing": {
-      "title": "ファイル共有",
-      "description": "簡単で安全なファイルアップロードと共有機能",
-      "badge": "セキュア"
+      "title": "安全な社内ファイル共有",
+      "description": "企業レベルのセキュリティ基準を満たした、安全かつ効率的なファイル共有システム",
+      "badge": "エンタープライズ"
     },
     "fastDelivery": {
-      "title": "高速配信",
-      "description": "Cloudflareのエッジネットワークによる高速配信",
-      "badge": "高速"
+      "title": "グローバル高速配信",
+      "description": "Cloudflareエッジネットワークによる世界規模での高速アクセスを実現",
+      "badge": "ワールドワイド"
     },
     "global": {
-      "title": "グローバル",
-      "description": "世界中どこからでもアクセス可能",
-      "badge": "グローバル"
+      "title": "多言語対応",
+      "description": "日本語、英語を含む主要言語に対応し、国際的なビジネス展開をサポート",
+      "badge": "多言語"
     }
   },
+  "upload": {
+    "title": "ファイルアップロード体験",
+    "description": "実際にファイルをアップロードして、システムの操作性をお試しください"
+  },
   "actions": {
-    "deploy": "デプロイする",
-    "readDocs": "ドキュメントを読む"
+    "deploy": "本格導入を検討",
+    "readDocs": "技術仕様を確認"
   },
   "developer": {
     "title": "開発者向け情報",
@@ -74,6 +78,57 @@
       "expiry": "有効期限",
       "none": "無し",
       "days": "日"
+    }
+  },
+  "autorag": {
+    "title": "AutoRAG - 知的検索システム",
+    "subtitle": "Cloudflare AutoRAGを活用したインテリジェントな情報検索システムをお試しください。インデックスは4時間毎に自動更新されます。",
+    "upload": {
+      "title": "ナレッジベースにテキストを追加",
+      "description": "テキストを入力してAutoRAGのナレッジベースに追加します。追加されたデータは4時間毎に自動でインデックスされます。",
+      "titlePlaceholder": "例：Cloudflareとは何ですか？",
+      "textPlaceholder": "例：Cloudflareは、Webサイトとアプリケーションのパフォーマンス、セキュリティ、信頼性を向上させるクラウドサービスです...",
+      "button": "Q&Aペアをアップロード",
+      "uploading": "アップロード中...",
+      "questionLabel": "質問",
+      "answerLabel": "回答"
+    },
+    "search": {
+      "title": "AutoRAG検索",
+      "description": "ナレッジベースから情報を検索して回答を取得",
+      "placeholder": "質問を入力してください...",
+      "empty": "質問を入力して検索を開始してください",
+      "searching": "検索中...",
+      "shortcuts": {
+        "send": "Enter: 送信",
+        "newline": "Shift + Enter: 改行"
+      }
+    }
+  },
+  "weather": {
+    "title": "天気情報 - Cloudflare KVキャッシュデモ",
+    "subtitle": "天気情報のキャッシュ機能をテストできます。初回はAPIから取得し、5分間KVにキャッシュされます。",
+    "form": {
+      "cityPlaceholder": "都市名を入力 (例: Tokyo, London, Paris)",
+      "fetchButton": "取得",
+      "clearCacheButton": "キャッシュクリア & 再取得"
+    },
+    "status": {
+      "cached": "キャッシュから取得",
+      "fresh": "APIから取得",
+      "cachedAt": "キャッシュ日時",
+      "temperature": "気温",
+      "feelsLike": "体感",
+      "humidity": "湿度",
+      "windSpeed": "風速"
+    },
+    "info": {
+      "title": "KVキャッシュの仕組み:",
+      "points": [
+        "初回APIコール時に結果を5分間KVに保存",
+        "5分以内の同じ都市への再リクエストはキャッシュから高速レスポンス",
+        "「キャッシュクリア」ボタンで強制的に新しいデータを取得"
+      ]
     }
   }
 }

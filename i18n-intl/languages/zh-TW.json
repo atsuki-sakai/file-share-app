@@ -1,32 +1,36 @@
 {
   "metadata": {
-    "title": "檔案分享應用",
-    "description": "安全快速的檔案分享平台"
+    "title": "企業檔案共享 & 會計管理系統",
+    "description": "具備安全性、多語言支援和高速傳輸的商業解決方案"
   },
   "header": {
-    "title": "檔案分享應用",
-    "subtitle": "安全快速的檔案分享平台。使用 Next.js 14 和 Cloudflare 構建的現代 Web 應用程式。"
+    "title": "企業級整合平台",
+    "subtitle": "體驗下一代商業解決方案示範。測試我們為高階主管優化的系統功能，從安全檔案共享到會計管理。"
   },
   "features": {
     "fileSharing": {
-      "title": "檔案分享",
-      "description": "簡單安全的檔案上傳和分享功能",
-      "badge": "安全"
+      "title": "安全企業檔案共享",
+      "description": "符合企業安全標準的企業級安全高效檔案共享系統",
+      "badge": "企業級"
     },
     "fastDelivery": {
-      "title": "快速傳輸",
-      "description": "透過 Cloudflare 邊緣網路實現高速傳輸",
-      "badge": "快速"
+      "title": "全球高速傳輸",
+      "description": "由 Cloudflare 邊緣網路基礎設施驅動的全球高速存取",
+      "badge": "全球化"
     },
     "global": {
-      "title": "全球存取",
-      "description": "全球任何地方都可存取",
-      "badge": "全球"
+      "title": "多語言支援",
+      "description": "支援包括日語和英語在內的主要語言，助力國際業務擴張",
+      "badge": "多語言"
     }
   },
+  "upload": {
+    "title": "檔案上傳體驗",
+    "description": "嘗試上傳檔案以親身體驗系統的易用性"
+  },
   "actions": {
-    "deploy": "部署",
-    "readDocs": "閱讀文件"
+    "deploy": "考慮全面實施",
+    "readDocs": "檢視技術規格"
   },
   "developer": {
     "title": "開發者資訊",
@@ -74,6 +78,57 @@
       "expiry": "有效期",
       "none": "無",
       "days": "天"
+    }
+  },
+  "autorag": {
+    "title": "AutoRAG - 智慧搜尋系統",
+    "subtitle": "體驗由 Cloudflare AutoRAG 驅動的智慧資訊檢索系統。索引每4小時自動更新。",
+    "upload": {
+      "title": "向知識庫新增文字",
+      "description": "輸入文字以新增到 AutoRAG 知識庫。新增的資料每4小時自動索引。",
+      "titlePlaceholder": "例：Cloudflare是什麼？",
+      "textPlaceholder": "例：Cloudflare是一個提高網站和應用程式效能、安全性和可靠性的雲端服務...",
+      "button": "上傳Q&A對",
+      "uploading": "上傳中...",
+      "questionLabel": "問題",
+      "answerLabel": "答案"
+    },
+    "search": {
+      "title": "AutoRAG 搜尋",
+      "description": "從知識庫搜尋資訊並獲得答案",
+      "placeholder": "輸入您的問題...",
+      "empty": "輸入問題開始搜尋",
+      "searching": "搜尋中...",
+      "shortcuts": {
+        "send": "Enter：發送",
+        "newline": "Shift + Enter：換行"
+      }
+    }
+  },
+  "weather": {
+    "title": "天氣資訊 - Cloudflare KV 快取示範",
+    "subtitle": "測試天氣資訊快取功能。首次呼叫從API獲取並在KV中快取5分鐘。",
+    "form": {
+      "cityPlaceholder": "輸入城市名稱（如：Tokyo, London, Paris）",
+      "fetchButton": "獲取",
+      "clearCacheButton": "清除快取並重新獲取"
+    },
+    "status": {
+      "cached": "來自快取",
+      "fresh": "來自API",
+      "cachedAt": "快取時間",
+      "temperature": "溫度",
+      "feelsLike": "體感",
+      "humidity": "濕度",
+      "windSpeed": "風速"
+    },
+    "info": {
+      "title": "KV 快取工作原理：",
+      "points": [
+        "初始 API 呼叫將結果儲存到 KV 中5分鐘",
+        "5分鐘內對同一城市的後續請求回傳快取回應",
+        "使用'清除快取'按鈕強制獲取新資料"
+      ]
     }
   }
 }

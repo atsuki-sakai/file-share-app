@@ -2,10 +2,10 @@ import Image from "next/image";
 import { useTranslations } from 'next-intl';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import ThemeToggle from "@/components/theme-toggle";
-import { FileText, Globe, ExternalLink, Code, Zap } from "lucide-react";
+import { FileText, Globe, ExternalLink, Code } from "lucide-react";
 import { Dropzone } from "@/components/dropzone";
+import { WeatherDemo } from "@/components/weather-demo";
+import { AutoRAGDemo } from "@/components/autorag-demo";
 
 export default function Home() {
   const t = useTranslations();
@@ -35,7 +35,7 @@ export default function Home() {
         </header>
 
         {/* 機能カード */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {/* <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           <Card className="hover:shadow-lg transition-shadow duration-200">
             <CardHeader>
               <div className="flex items-center gap-2">
@@ -80,7 +80,7 @@ export default function Home() {
               <Badge variant="secondary">{t('features.global.badge')}</Badge>
             </CardContent>
           </Card>
-        </div>
+        </div> */}
 
         {/* アクションボタン */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
@@ -93,57 +93,35 @@ export default function Home() {
             {t('actions.readDocs')}
           </Button>
         </div>
+        {/* AutoRAG Demo - Intelligent Search System */}
+        <div className="mb-12">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              {t('autorag.title')}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              {t('autorag.subtitle')}
+            </p>
+          </div>
+          <AutoRAGDemo />
+        </div>
+
+        {/* Weather Demo - Cloudflare KV Cache */}
+        <WeatherDemo />
+
         <Card className="max-w-2xl mx-auto mt-12">
           <CardHeader>
             <CardTitle>
-              ファイルをアップロード
+              {t('upload.title')}
             </CardTitle>
+            <CardDescription>
+              {t('upload.description')}
+            </CardDescription>
           </CardHeader>
           <CardContent>
             <Dropzone />
           </CardContent>
         </Card>
-
-        {/* 開発者向け情報
-        <Card className="max-w-2xl mx-auto">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Code className="h-5 w-5" />
-              {t('developer.title')}
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
-              <p className="text-sm text-muted-foreground">
-                {t('developer.techStack')}
-              </p>
-              <div className="flex flex-wrap gap-2">
-                <Badge variant="outline">Next.js 14</Badge>
-                <Badge variant="outline">React 18</Badge>
-                <Badge variant="outline">TypeScript</Badge>
-                <Badge variant="outline">Tailwind CSS</Badge>
-                <Badge variant="outline">Shadcn/ui</Badge>
-                <Badge variant="outline">Cloudflare</Badge>
-              </div>
-            </div>
-            
-            <div className="space-y-2">
-              <p className="text-sm text-muted-foreground">
-                {t('developer.getStarted')}
-              </p>
-              <ol className="list-decimal list-inside space-y-1 text-sm">
-                <li>
-                  <code className="bg-muted px-2 py-1 rounded text-xs">
-                    app/page.tsx
-                  </code>
-                  {t('developer.editFile')}
-                </li>
-                <li>{t('developer.autoReload')}</li>
-              </ol>
-            </div>
-          </CardContent>
-        </Card> */}
-        
       </div>
 
 

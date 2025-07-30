@@ -1,6 +1,11 @@
 import { notFound } from "next/navigation"
-import MultipleFileDownloadClient from "./multiple-client"
+import { drizzle } from "drizzle-orm/d1"
+import { inArray } from "drizzle-orm"
+import { files } from "@/db/schema"
+import FileDownloadClient from "./client"
 import type { FileInfo } from "@/types"
+import { getCloudflareContext } from "@opennextjs/cloudflare"
+import type { CloudflareEnv } from "@/types/services"
 
 async function getMultipleFileInfo(ids: string[]): Promise<FileInfo[] | null> {
     try {
@@ -8,43 +13,48 @@ async function getMultipleFileInfo(ids: string[]): Promise<FileInfo[] | null> {
             return null
         }
         
-        // 各ファイルの情報を並行して取得
-        const fileInfoPromises = ids.map(async (fileId) => {
-            try {
-                const response = await fetch(`http://localhost:8787/api/files/${fileId}`, {
-                    cache: 'no-store'
-                })
-                
-                if (!response.ok) {
-                    console.error(`API error for ${fileId}: ${response.status} ${response.statusText}`)
-                    throw new Error(`Failed to fetch file info for ${fileId}: ${response.status}`)
-                }
-                
-                const result = await response.json() as any
-                console.log(`API response for ${fileId}:`, result)
-                
-                // APIレスポンスの構造に合わせて調整
-                const fileData = result.success ? result.data : result
-                
-                return {
-                    id: fileData.id,
-                    name: fileData.name || '',
-                    size: fileData.size || 0,
-                    type: fileData.type || '',
-                    createdAt: fileData.createdAt?.toString() || '',
-                    updatedAt: fileData.updatedAt?.toString() || '',
-                    expiresAt: fileData.expiresAt || ''
-                }
-            } catch (error) {
-                console.error(`Error fetching file ${fileId}:`, error)
-                throw error
-            }
-        })
+        // Cloudflare Workers環境から直接データベースにアクセス
+        const env = getCloudflareContext().env as CloudflareEnv
+        const db = drizzle(env.DB)
         
-        const filesInfo = await Promise.all(fileInfoPromises)
+        console.log('Fetching files from database:', ids)
+        
+        // データベースから直接ファイル情報を取得
+        const fileRecords = await db
+            .select()
+            .from(files)
+            .where(inArray(files.id, ids))
+        
+        console.log('Database query result:', fileRecords)
+        
+        if (fileRecords.length === 0) {
+            console.error("No files found in database")
+            return null
+        }
+        
+        // 期限切れチェック
+        const now = new Date()
+        const validFiles = fileRecords.filter(file => new Date(file.expiresAt) > now)
+        
+        if (validFiles.length === 0) {
+            console.error("All files have expired")
+            return null
+        }
+        
+        // FileInfo形式に変換
+        const filesInfo: FileInfo[] = validFiles.map(file => ({
+            id: file.id,
+            name: file.name || '',
+            size: file.size || 0,
+            type: file.type || '',
+            createdAt: file.createdAt?.toString() || '',
+            updatedAt: file.updatedAt?.toString() || '',
+            expiresAt: file.expiresAt || ''
+        }))
+        
         return filesInfo
     } catch (error) {
-        console.error("Error fetching multiple file info:", error)
+        console.error("Error fetching multiple file info from database:", error)
         return null
     }
 }
@@ -65,17 +75,19 @@ export default async function FilesPage({
         // IDsが文字列の場合はカンマ区切りで分割、配列の場合はそのまま使用
         const fileIds = Array.isArray(ids) ? ids : ids.split(',').map(id => id.trim()).filter(Boolean)
         
+        console.log('fileIds', fileIds)
         if (fileIds.length === 0) {
             return notFound()
         }
         
         const filesInfo = await getMultipleFileInfo(fileIds)
         
+        console.log('filesInfo', filesInfo)
         if (!filesInfo || filesInfo.length === 0) {
             return notFound()
         }
         
-        // 期限切れチェック
+        // 期限切れチェック（既にデータベースレベルでチェック済みだが、念のため）
         const now = new Date()
         const hasExpiredFiles = filesInfo.some(file => new Date(file.expiresAt) < now)
 
@@ -90,7 +102,7 @@ export default async function FilesPage({
             )
         }
 
-        return <MultipleFileDownloadClient fileIds={fileIds} filesInfo={filesInfo} />
+        return <FileDownloadClient fileIds={fileIds} filesInfo={filesInfo} />
     } catch (error) {
         console.error("Multiple files page render error:", error)
         return (

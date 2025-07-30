@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { useRouter } from "next/navigation"
 import { useDropzone, type DropzoneOptions } from "react-dropzone"
 import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
@@ -15,6 +16,7 @@ import { expirationOptions } from "@/lib/constants"
 import type { ExpirationOption } from "@/types/common/types"
 import type { UploadResponse } from "@/types/components/types"
 import { useTranslations } from 'next-intl'
+import { FileRejection } from "react-dropzone"
 
 
 const dropzoneVariants = cva(
@@ -44,13 +46,14 @@ export interface DropzoneProps
   extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onDrop'>,
     VariantProps<typeof dropzoneVariants> {
   options?: DropzoneOptions
-  onDrop?: (acceptedFiles: File[], rejectedFiles: any[]) => void
+  onDrop?: (acceptedFiles: File[], rejectedFiles: FileRejection[]) => void
   children?: React.ReactNode
 }
 
 const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
   ({ className, variant, size, options, onDrop, children, ...props }, ref) => {
     const { toast } = useToast()
+    const router = useRouter()
     const t = useTranslations('dropzone')
     const [uploadResult, setUploadResult] = React.useState<UploadResponse | null>(null)
     const [files, setFiles] = React.useState<File[]>([])
@@ -103,7 +106,11 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         if (!response.ok) {
           throw new Error("Failed to upload files response:" + response + ", status: " + response.status)
         }
-        const uploadResult: UploadResponse = await response.json()
+        const apiResponse = await response.json() as { success: boolean; data?: UploadResponse } | UploadResponse
+        console.log('API Response:', apiResponse)
+        
+        // APIレスポンスの構造を確認して適切に処理
+        const uploadResult: UploadResponse = ('data' in apiResponse && apiResponse.data) ? apiResponse.data : apiResponse as UploadResponse
         setUploadResult(uploadResult)
         toast({
           title: t('success.uploadComplete'),
@@ -112,9 +119,11 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
         console.log("uploadResult", uploadResult)
         setFiles([])
       } catch (error) {
+        // Cloudflare Workers環境での安全なエラーログ
+        const errorMessage = error instanceof Error ? error.message : String(error);
         toast({
           title: t('errors.uploadError'),
-          description: t('errors.uploadErrorDescription') + error,
+          description: t('errors.uploadErrorDescription') + errorMessage,
           variant: "destructive",
         })
       } finally {
@@ -260,9 +269,7 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
                       onClick={() => {
                         // 共有リンクをコピー
                         const fileIds = uploadResult.files!.map(f => f.id).join(',');
-                        const shareUrl = uploadResult.files!.length > 1 
-                          ? `${window.location.origin}/ja/files?ids=${fileIds}`
-                          : `${window.location.origin}/ja/files/${uploadResult.files![0].id}`;
+                        const shareUrl = `${window.location.origin}/ja/files?ids=${fileIds}`;
                         navigator.clipboard.writeText(shareUrl);
                         toast({
                           title: t('success.linkCopied'),
@@ -274,13 +281,15 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
                     </Button>
                   </div>
                   <div className="space-y-1 max-h-32 overflow-y-auto">
-                    {uploadResult.files.map((file, index) => (
+                    {uploadResult.files!.map((file, index) => (
                       <div key={index} className="flex items-center justify-between p-2 bg-muted rounded-md text-sm">
                         <span className="truncate">{file.name}</span>
                         <Button 
                           variant="ghost" 
                           size="sm"
-                          onClick={() => window.open(`/api/download/${file.id}`, '_blank')}
+                          onClick={() => {
+                            router.push(`/ja/files?ids=${uploadResult.files!.map(f => f.id).join(',')}`)
+                          }}
                         >
                           <Download className="h-3 w-3" />
                         </Button>
@@ -299,11 +308,10 @@ const Dropzone = React.forwardRef<HTMLDivElement, DropzoneProps>(
                       <Copy className="h-4 w-4" />
                     </Button>
                     <Button variant="outline" size="icon" onClick={() => {
-                      const hasMultipleFiles = uploadResult.files && uploadResult.files.length > 1;
-                      const downloadUrl = hasMultipleFiles 
-                        ? `/ja/files?ids=${uploadResult.files!.map(f => f.id).join(',')}`
-                        : `/ja/files/${uploadResult.id || uploadResult.files![0].id}`;
-                      window.open(downloadUrl, '_blank');
+                      if (uploadResult.files && uploadResult.files.length > 0) {
+                        const fileIds = uploadResult.files!.map(f => f.id).join(',');
+                        router.push(`/ja/files?ids=${fileIds}`)
+                      }
                     }}>
                       <Download className="h-4 w-4" />
                     </Button>

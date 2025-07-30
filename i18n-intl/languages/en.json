@@ -1,32 +1,36 @@
 {
   "metadata": {
-    "title": "File Share App",
-    "description": "Secure and fast file sharing platform"
+    "title": "Enterprise File Sharing & Accounting Management System",
+    "description": "Business solution with security, multilingual support, and high-speed delivery"
   },
   "header": {
-    "title": "File Share App",
-    "subtitle": "A secure and fast file sharing platform. A modern web application built with Next.js 14 and Cloudflare."
+    "title": "Enterprise Integrated Platform",
+    "subtitle": "Experience the next-generation business solution demo. Test the power of our system optimized for executives, from secure file sharing to accounting management."
   },
   "features": {
     "fileSharing": {
-      "title": "File Sharing",
-      "description": "Easy and secure file upload and sharing functionality",
-      "badge": "Secure"
+      "title": "Secure Corporate File Sharing",
+      "description": "Enterprise-grade secure and efficient file sharing system meeting corporate security standards",
+      "badge": "Enterprise"
     },
     "fastDelivery": {
-      "title": "Fast Delivery",
-      "description": "High-speed delivery through Cloudflare's edge network",
-      "badge": "Fast"
+      "title": "Global High-Speed Delivery",
+      "description": "Worldwide high-speed access powered by Cloudflare's edge network infrastructure",
+      "badge": "Worldwide"
     },
     "global": {
-      "title": "Global",
-      "description": "Accessible from anywhere in the world",
-      "badge": "Global"
+      "title": "Multilingual Support",
+      "description": "Supporting major languages including Japanese and English for international business expansion",
+      "badge": "Multilingual"
     }
   },
+  "upload": {
+    "title": "File Upload Experience",
+    "description": "Try uploading files to experience the system's usability firsthand"
+  },
   "actions": {
-    "deploy": "Deploy",
-    "readDocs": "Read Documentation"
+    "deploy": "Consider Full Implementation",
+    "readDocs": "Review Technical Specifications"
   },
   "developer": {
     "title": "Developer Information",
@@ -74,6 +78,57 @@
       "expiry": "Expiry",
       "none": "None",
       "days": " days"
+    }
+  },
+  "autorag": {
+    "title": "AutoRAG - Intelligent Search System",
+    "subtitle": "Try our intelligent information retrieval system powered by Cloudflare AutoRAG. Index is automatically updated every 4 hours.",
+    "upload": {
+      "title": "Add Text to Knowledge Base",
+      "description": "Input text to add to the AutoRAG knowledge base. Added data is automatically indexed every 4 hours.",
+      "titlePlaceholder": "e.g. What is Cloudflare?",
+      "textPlaceholder": "e.g. Cloudflare is a cloud service that improves website and application performance, security, and reliability...",
+      "button": "Upload Q&A pair",
+      "uploading": "Uploading...",
+      "questionLabel": "Question",
+      "answerLabel": "Answer"
+    },
+    "search": {
+      "title": "AutoRAG Search",
+      "description": "Search information from knowledge base and get answers",
+      "placeholder": "Enter your question...",
+      "empty": "Enter a question to start searching",
+      "searching": "Searching...",
+      "shortcuts": {
+        "send": "Enter: Send",
+        "newline": "Shift + Enter: New line"
+      }
+    }
+  },
+  "weather": {
+    "title": "Weather Information - Cloudflare KV Cache Demo",
+    "subtitle": "Test the weather information caching functionality. First call fetches from API and caches in KV for 5 minutes.",
+    "form": {
+      "cityPlaceholder": "Enter city name (e.g. Tokyo, London, Paris)",
+      "fetchButton": "Fetch",
+      "clearCacheButton": "Clear Cache & Refetch"
+    },
+    "status": {
+      "cached": "From Cache",
+      "fresh": "From API",
+      "cachedAt": "Cached at",
+      "temperature": "Temperature",
+      "feelsLike": "Feels like",
+      "humidity": "Humidity",
+      "windSpeed": "Wind speed"
+    },
+    "info": {
+      "title": "How KV Cache Works:",
+      "points": [
+        "Initial API call saves result to KV for 5 minutes",
+        "Subsequent requests for same city within 5 minutes return cached response",
+        "Use 'Clear Cache' button to force fetch new data"
+      ]
     }
   }
 }

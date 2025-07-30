@@ -1,32 +1,36 @@
 {
   "metadata": {
-    "title": "文件分享应用",
-    "description": "安全快速的文件分享平台"
+    "title": "企业文件共享 & 会计管理系统",
+    "description": "具备安全性、多语言支持和高速传输的商业解决方案"
   },
   "header": {
-    "title": "文件分享应用",
-    "subtitle": "安全快速的文件分享平台。使用 Next.js 14 和 Cloudflare 构建的现代 Web 应用程序。"
+    "title": "企业级集成平台",
+    "subtitle": "体验下一代商业解决方案演示。测试我们为高管优化的系统功能，从安全文件共享到会计管理。"
   },
   "features": {
     "fileSharing": {
-      "title": "文件分享",
-      "description": "简单安全的文件上传和分享功能",
-      "badge": "安全"
+      "title": "安全企业文件共享",
+      "description": "符合企业安全标准的企业级安全高效文件共享系统",
+      "badge": "企业级"
     },
     "fastDelivery": {
-      "title": "快速传输",
-      "description": "通过 Cloudflare 边缘网络实现高速传输",
-      "badge": "快速"
+      "title": "全球高速传输",
+      "description": "由 Cloudflare 边缘网络基础设施驱动的全球高速访问",
+      "badge": "全球化"
     },
     "global": {
-      "title": "全球访问",
-      "description": "全球任何地方都可访问",
-      "badge": "全球"
+      "title": "多语言支持",
+      "description": "支持包括日语和英语在内的主要语言，助力国际业务扩张",
+      "badge": "多语言"
     }
   },
+  "upload": {
+    "title": "文件上传体验",
+    "description": "尝试上传文件以亲身体验系统的易用性"
+  },
   "actions": {
-    "deploy": "部署",
-    "readDocs": "阅读文档"
+    "deploy": "考虑全面实施",
+    "readDocs": "查看技术规格"
   },
   "developer": {
     "title": "开发者信息",
@@ -74,6 +78,57 @@
       "expiry": "有效期",
       "none": "无",
       "days": "天"
+    }
+  },
+  "autorag": {
+    "title": "AutoRAG - 智能搜索系统",
+    "subtitle": "体验由 Cloudflare AutoRAG 驱动的智能信息检索系统。索引每4小时自动更新。",
+    "upload": {
+      "title": "向知识库添加文本",
+      "description": "输入文本以添加到 AutoRAG 知识库。添加的数据每4小时自动索引。",
+      "titlePlaceholder": "例：Cloudflare是什么？",
+      "textPlaceholder": "例：Cloudflare是一个提高网站和应用程序性能、安全性和可靠性的云服务...",
+      "button": "上传Q&A对",
+      "uploading": "上传中...",
+      "questionLabel": "问题",
+      "answerLabel": "答案"
+    },
+    "search": {
+      "title": "AutoRAG 搜索",
+      "description": "从知识库搜索信息并获得答案",
+      "placeholder": "输入您的问题...",
+      "empty": "输入问题开始搜索",
+      "searching": "搜索中...",
+      "shortcuts": {
+        "send": "回车：发送",
+        "newline": "Shift + 回车：换行"
+      }
+    }
+  },
+  "weather": {
+    "title": "天气信息 - Cloudflare KV 缓存演示",
+    "subtitle": "测试天气信息缓存功能。首次调用从API获取并在KV中缓存5分钟。",
+    "form": {
+      "cityPlaceholder": "输入城市名称（如：Tokyo, London, Paris）",
+      "fetchButton": "获取",
+      "clearCacheButton": "清除缓存并重新获取"
+    },
+    "status": {
+      "cached": "来自缓存",
+      "fresh": "来自API",
+      "cachedAt": "缓存时间",
+      "temperature": "温度",
+      "feelsLike": "体感",
+      "humidity": "湿度",
+      "windSpeed": "风速"
+    },
+    "info": {
+      "title": "KV 缓存工作原理：",
+      "points": [
+        "初始 API 调用将结果保存到 KV 中5分钟",
+        "5分钟内对同一城市的后续请求返回缓存响应",
+        "使用'清除缓存'按钮强制获取新数据"
+      ]
     }
   }
 }
