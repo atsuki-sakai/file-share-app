@@ -29,7 +29,7 @@ export default function LanguageSwitcher() {
           <SelectValue>
             <div className="flex items-center gap-2">
               <span>{currentLocale?.flag}</span>
-              <span className="hidden sm:inline">{currentLocale?.label}</span>
+              <span className="inline">{currentLocale?.label}</span>
             </div>
           </SelectValue>
         </SelectTrigger>
